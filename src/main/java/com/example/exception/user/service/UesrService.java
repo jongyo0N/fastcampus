@@ -4,7 +4,6 @@ import com.example.exception.user.db.UserRepository;
 import com.example.exception.user.model.UserEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.w3c.dom.stylesheets.LinkStyle;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,7 +22,7 @@ public class UesrService {
         return userRepository.findAll();
     }
 
-    public void delete(Long id){
+    public void delete(UserEntity id){
         userRepository.delete(id);
     }
 
@@ -32,6 +31,6 @@ public class UesrService {
     }
 
     public List<UserEntity> filterScore(int score){
-        return userRepository.findAllScore(score);
+        return UserRepository.findAllScoreGreaterThanEqual(score);
     }
 }

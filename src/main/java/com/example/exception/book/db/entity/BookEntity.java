@@ -1,4 +1,4 @@
-package com.example.exception.user.model;
+package com.example.exception.book.db.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,19 +9,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity(name="user")
-public class UserEntity {
+@Entity(name="book")
+public class BookEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
-    private int score;
-
+    private String category;
+    private BigDecimal amount;
 }
